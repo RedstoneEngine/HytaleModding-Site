@@ -10,7 +10,7 @@ import { ModeToggle } from "./mode-toggle";
 import BG from "./bg.png";
 
 export default function Countdown() {
-  const targetDate = new Date("2026-06-08T10:00:00-05:00");
+  const targetDate = new Date("2026-06-08T10:00:00-04:00");
   const router = useRouter();
 
   useEffect(() => {
