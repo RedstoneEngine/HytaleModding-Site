@@ -7,10 +7,12 @@ authors:
 ---
 
 <Callout type="warning">
-  This is a Pre-Release feature and is expected to be changed and improved upon before the release of Update 6.
+  This is a Pre-Release feature and is expected to be changed and improved upon
+  before the release of Update 6.
 </Callout>
 
 ## What is a Graph?
+
 A parallel to using Graphs would be the Position Cell Noise Density (PCN), so I would encourage experimenting how that density works first! This new Graphs system however allows a lot more control than PCNs! This includes better modification of the positions of points, what outputs you get from them, and most importantly being able to create branches or “Edges” from point to point or in graph's case “Node” to “Node” to be able to create forms of webs or paths between Nodes!
 
 <div className="flex flex-row rounded-lg border p-4">
@@ -30,7 +32,7 @@ A parallel to using Graphs would be the Position Cell Noise Density (PCN), so I 
 
 ## Glossary
 
-Most of the terms will be defined in more detail below in the ***Steps and Definitions***. Come back here if a random bolded word shows up!
+Most of the terms will be defined in more detail below in the **_Steps and Definitions_**. Come back here if a random bolded word shows up!
 
 <table>
   <tbody>
@@ -40,7 +42,10 @@ Most of the terms will be defined in more detail below in the ***Steps and Defin
     </tr>
     <tr>
       <td>**Content**</td>
-      <td>Contains Density, Material, PropDistributions, and/or Position information.</td>
+      <td>
+        Contains Density, Material, PropDistributions, and/or Position
+        information.
+      </td>
     </tr>
     <tr>
       <td>**Nodes**</td>
@@ -60,7 +65,9 @@ Most of the terms will be defined in more detail below in the ***Steps and Defin
     </tr>
     <tr>
       <td>&emsp;&emsp;**Node Actions**</td>
-      <td>A list of actions to modify nodes, create edges, or define Content.</td>
+      <td>
+        A list of actions to modify nodes, create edges, or define Content.
+      </td>
     </tr>
     <tr>
       <td>&emsp;&emsp;&emsp;&emsp;**Proximity Connector**</td>
@@ -68,27 +75,44 @@ Most of the terms will be defined in more detail below in the ***Steps and Defin
     </tr>
     <tr>
       <td>&emsp;&emsp;&emsp;&emsp;**Node Content**</td>
-      <td>Defines the Density, Material, PropDistributions, and/or Positions information per Node.</td>
+      <td>
+        Defines the Density, Material, PropDistributions, and/or Positions
+        information per Node.
+      </td>
     </tr>
     <tr>
       <td>&emsp;&emsp;**EdgeActions**</td>
-      <td>A list of actions to modify edges or split into Nodes for Content.</td>
+      <td>
+        A list of actions to modify edges or split into Nodes for Content.
+      </td>
     </tr>
     <tr>
       <td>&emsp;&emsp;&emsp;&emsp;**Splitter**</td>
-      <td>Splits up an Edge into a designated amount of Nodes in a line to define content along. This can be used instead of the DistanceFromGraphEdge Density node which may be expensive.</td>
+      <td>
+        Splits up an Edge into a designated amount of Nodes in a line to define
+        content along. This can be used instead of the DistanceFromGraphEdge
+        Density node which may be expensive.
+      </td>
     </tr>
     <tr>
       <td>&emsp;&emsp;**Node/Edge Selectors**</td>
-      <td>Allows precise control over which Nodes or Edges to perform actions on.</td>
+      <td>
+        Allows precise control over which Nodes or Edges to perform actions on.
+      </td>
     </tr>
     <tr>
       <td>**Graph “Connections”**</td>
-      <td>These nodes are how you use Content defined in Graphs inside your Biome file.</td>
+      <td>
+        These nodes are how you use Content defined in Graphs inside your Biome
+        file.
+      </td>
     </tr>
     <tr>
       <td>**Content Layer**</td>
-      <td>This value is the bridge between a Connection and defined Content in a Graph.</td>
+      <td>
+        This value is the bridge between a Connection and defined Content in a
+        Graph.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -124,10 +148,19 @@ Now that we have Nodes and Edges set up, let’s make them do something! For thi
 <table>
   <tbody>
     <tr>
-      <td>Here's an example of defining as much Content as we can into Nodes where each Node has a Cylinder defined out of Density, a Gold Material coating the cylinder, with a Dungeon Room PropDistribution placed underneath, with a Position that will be used to point to a chest on top of the Cylinder.</td>
+      <td>
+        Here's an example of defining as much Content as we can into Nodes where
+        each Node has a Cylinder defined out of Density, a Gold Material coating
+        the cylinder, with a Dungeon Room PropDistribution placed underneath,
+        with a Position that will be used to point to a chest on top of the
+        Cylinder.
+      </td>
     </tr>
     <tr>
-      <td>![Content Example](/assets/official-documentation/worldgen/graphs/content-example.webp)</td>
+      <td>
+        ![Content
+        Example](/assets/official-documentation/worldgen/graphs/content-example.webp)
+      </td>
     </tr>
   </tbody>
 </table>
@@ -143,16 +176,28 @@ Graph Connections are where you extract the **Content** you've just defined from
       <td>Material Provider</td>
     </tr>
     <tr>
-      <td>![Density Connection](/assets/official-documentation/worldgen/graphs/connection-density.webp)</td>
-      <td>![Material Connection](/assets/official-documentation/worldgen/graphs/connection-material.webp)</td>
+      <td>
+        ![Density
+        Connection](/assets/official-documentation/worldgen/graphs/connection-density.webp)
+      </td>
+      <td>
+        ![Material
+        Connection](/assets/official-documentation/worldgen/graphs/connection-material.webp)
+      </td>
     </tr>
-        <tr>
+    <tr>
       <td>Prop Distributions</td>
       <td>Positions</td>
     </tr>
     <tr>
-      <td>![Prop Distributions Connection](/assets/official-documentation/worldgen/graphs/connection-prop.webp)</td>
-      <td>![Positions Connection](/assets/official-documentation/worldgen/graphs/connection-positions.webp)</td>
+      <td>
+        ![Prop Distributions
+        Connection](/assets/official-documentation/worldgen/graphs/connection-prop.webp)
+      </td>
+      <td>
+        ![Positions
+        Connection](/assets/official-documentation/worldgen/graphs/connection-positions.webp)
+      </td>
     </tr>
   </tbody>
 </table>
@@ -160,10 +205,17 @@ Graph Connections are where you extract the **Content** you've just defined from
 <table>
   <tbody>
     <tr>
-      <td>This example continues off of the previous example. Here we are extracting the previously defined Positions Content to place a chest on top of our Density defined Cylinder.</td>
+      <td>
+        This example continues off of the previous example. Here we are
+        extracting the previously defined Positions Content to place a chest on
+        top of our Density defined Cylinder.
+      </td>
     </tr>
     <tr>
-      <td>![Connection Example](/assets/official-documentation/worldgen/graphs/connection-example.webp)</td>
+      <td>
+        ![Connection
+        Example](/assets/official-documentation/worldgen/graphs/connection-example.webp)
+      </td>
     </tr>
   </tbody>
 </table>
@@ -175,7 +227,9 @@ While defining specific Content per Nodes is cool, we’re here to create some w
 ![Edges Example](/assets/official-documentation/worldgen/graphs/edges-example.webp)
 
 <Callout type="warning">
-  This tech is still new and creating Content for too many Edges or not using a YOverride can create a huge performance loss, so use sparingly for now or else your World will timeout and crash!
+  This tech is still new and creating Content for too many Edges or not using a
+  YOverride can create a huge performance loss, so use sparingly for now or else
+  your World will timeout and crash!
 </Callout>
 
 There are 2 ways to define Content along Edges:
@@ -253,10 +307,16 @@ This Action will select ConnectedNodes to perform their own actions. (I’m not 
 <table>
   <tbody>
     <tr>
-      <td>This is an example of expanding an IcyCave Content to its Connected Nodes!</td>
+      <td>
+        This is an example of expanding an IcyCave Content to its Connected
+        Nodes!
+      </td>
     </tr>
     <tr>
-      <td>![Connected Example](/assets/official-documentation/worldgen/graphs/action-connected-example.webp)</td>
+      <td>
+        ![Connected
+        Example](/assets/official-documentation/worldgen/graphs/action-connected-example.webp)
+      </td>
     </tr>
   </tbody>
 </table>
@@ -264,10 +324,16 @@ This Action will select ConnectedNodes to perform their own actions. (I’m not 
 <table>
   <tbody>
     <tr>
-      <td>Based on the Previous NodeSelectors section, this setup would work as well!</td>
+      <td>
+        Based on the Previous NodeSelectors section, this setup would work as
+        well!
+      </td>
     </tr>
     <tr>
-      <td>![Connected Alt Example](/assets/official-documentation/worldgen/graphs/action-connected-example-alt.webp)</td>
+      <td>
+        ![Connected Alt
+        Example](/assets/official-documentation/worldgen/graphs/action-connected-example-alt.webp)
+      </td>
     </tr>
   </tbody>
 </table>
