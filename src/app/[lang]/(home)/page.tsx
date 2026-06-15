@@ -356,7 +356,7 @@ export default function HomePage() {
         <div className="w-full max-w-5xl space-y-8 pt-16 text-center md:pt-0">
           <ViewTransition name="hero" share="blur-scale-transition">
             <div className="space-y-6">
-              {/* <div className="relative mx-auto w-fit max-w-full">
+              <div className="relative mx-auto w-fit max-w-full">
                 <GlowEffect
                   colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
                   mode="flowHorizontal"
@@ -369,11 +369,11 @@ export default function HomePage() {
                     href={"https://hytalemodding.dev/en/grants"}
                     className="flex items-center justify-center gap-2 text-wrap"
                     >
-                    We launched the HytaleModding x BisectHosting Grant Program!{" "}
+                    Hytale x HytaleModding ModJam is live!{" "}
                     <ArrowRightIcon className="h-4 w-4" />
                     </Link>
                 </div>
-              </div> */}
+              </div>
               <h1 className="text-4xl font-semibold text-balance md:text-5xl">
                 <div>{messages.home.title.split("{flipwords}")[0]}</div>
                 <div>
