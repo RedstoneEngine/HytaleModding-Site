@@ -12,33 +12,24 @@ In this guide, you'll learn how to manage player inventories in your Hytale mod.
 
 ## Accessing the Player Inventory
 
-To access the Inventory of a `Player`, you can use the `getInventory()` method which returns the `Inventory` object.
+To access the Inventory of a `Player`, you can get the `InventoryComponent`. Before we can do that, you should know all the individual Component Types that come under this.
+
+InventoryComponent has the following component types:
+- `InventoryComponent.Backpack`
+- `InventoryComponent.Tool`
+- `InventoryComponent.Utility`
+- `InventoryComponent.Armor`
+- `InventoryComponent.Storage`
+- `InventoryComponent.Hotbar`
+
+Each of these have their own `getComponentType()` method that you can use to get the component type for that specific inventory. InventoryComponent does not have a `getComponentType()` method itself. 
+
+To get the inventory, you can do the following:
 
 ```java
-Inventory inventory = player.getInventory();
+InventoryComponent armorComponent = store.getComponent(entityRef, InventoryComponent.Armor.getComponentType());
+ItemContainer container = armorComponent.getInventory()
 ```
-
-## Opening Inventories
-
-You can open different types of inventories, these inventories are known as "Pages". You can also add custom pages, this will be covered in a guide later on.
-
-You can use the `Page` enum to reference existing inventories, currently the following pages are available:
-
-- `Page.None`
-- `Page.Bench`
-- `Page.Inventory`
-- `Page.ToolsSettings`
-- `Page.Map`
-- `Page.MachinimaEditor`
-- `Page.ContentCreation`
-- `Page.Custom`
-
-```java
-PageManager pageManager = player.getPageManager();
-Store<EntityStore> store = player.getWorld().getEntityStore().getStore();
-pageManager.setPage(player.getReference(), store, Page.Inventory);
-```
-
 
 ## `ItemStack` Class
 
@@ -75,33 +66,12 @@ ItemStack stackWithDurability = new ItemStack(
 );
 ```
 
-## Getting the `ItemContainer`
-
-The `Inventory` class provides methods to get multiple `ItemContainer` objects, like:
-
-- `.getStorage()`
-- `.getArmor()`
-- `.getBackpack()`
-- `.getHotbar()`
-- `.getUtility()`
-
-There are also combined methods like:
-
-- `.getCombinedEverything()`
-- `.getCombinedArmorHotbarStorage()`
-- `.getCombinedBackpackStorageHotbar()`
-- `.getCombinedHotbarFirst()`
-- `.getCombinedStorageFirst()`
-- `.getCombinedArmorHotbarUtilityStorage()`
-- `.getCombinedHotbarUtilityConsumableStorage()`
-
 ## Adding `ItemStack` objects to the Inventory
 
 To add an `ItemStack` to a player's inventory, you can use the `addItemStack()` method of the `ItemContainer` class.
 
 ```java
-Inventory inventory = player.getInventory();
-ItemContainer storageContainer = inventory.getStorage();
+ItemContainer storageContainer = inventoryComponent.getInventory()
 storageContainer.addItemStack(item);
 ```
 
@@ -113,11 +83,10 @@ storageContainer.addItemStackToSlot((short) 4, stack)
 
 ## Removing `ItemStack` objects from the Inventory
 
-To remove an `ItemStack` from a player's inventory, you can use the `removeItemStack()` method of the `Inventory` class.
+To remove an `ItemStack` from a player's inventory, you can use the `removeItemStack()` method of the `ItemContainer` class.
 
 ```java
-Inventory inventory = player.getInventory();
-ItemContainer storageContainer = inventory.getStorage();
+ItemContainer storageContainer = inventoryComponent.getInventory()
 storageContainer.removeItemStack(item);
 ```
 
@@ -127,6 +96,7 @@ Or you can specify a certain slot to remove it from:
 storageContainer.removeItemStackFromSlot((short) 4);
 ```
 
+{ /*
 ## Custom Inventories (Item Containers)
 #### Adding an inventory to an item
 You can add a custom inventory by adding the following to the items json
@@ -207,3 +177,4 @@ ItemStack newItem = itemStack.withMetadata(
 player.getInventory().getHotbar().setItemStackForSlot(0, newItem);
 ```
 
+*/}
