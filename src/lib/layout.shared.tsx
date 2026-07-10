@@ -19,13 +19,13 @@ export function baseOptions(
         <div className="flex items-center gap-2 lg:px-2">
           <div className="relative h-16 w-8 in-[.official]:w-20 lg:h-8">
             <Image
-              alt="Hytale Modding"
+              alt="HytaleModding"
               src={HytaleModdingLogo}
               fill
               className="hidden object-contain not-dark:invert in-[.official]:block"
             />
             <Image
-              alt="Hytale Modding"
+              alt="HytaleModding"
               src={HytaleModdingIcon}
               fill
               className="object-contain not-dark:invert in-[.official]:hidden"

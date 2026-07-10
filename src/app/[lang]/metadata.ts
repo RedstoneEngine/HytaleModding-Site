@@ -34,14 +34,14 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    siteName: "Hytale Modding",
+    siteName: "HytaleModding",
     url: SITE_URL,
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Hytale Modding",
+        alt: "HytaleModding",
       },
     ],
   },

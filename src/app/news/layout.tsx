@@ -20,7 +20,7 @@ const { provider } = defineI18nUI(i18n, {
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "News | Hytale Modding",
+  title: "News | HytaleModding",
   description: "News, guides, and community updates from HytaleModding.",
 };
 

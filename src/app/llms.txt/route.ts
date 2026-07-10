@@ -7,7 +7,7 @@ export async function GET() {
   const entries = getLLMIndex(baseUrl);
 
   const header = [
-    "# Hytale Modding Documentation",
+    "# HytaleModding Documentation",
     "> The number one community resource for modding Hytale, featuring comprehensive guides, detailed documentation, and essential tools to kickstart your modding journey.",
     "",
     "## Docs",

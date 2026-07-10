@@ -4,7 +4,7 @@ import { baseOptions } from "@/lib/layout.shared";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hytale Modding",
+  title: "HytaleModding",
   description:
     "An unofficial community for modding Hytale, providing guides, documentation, and resources.",
 };
