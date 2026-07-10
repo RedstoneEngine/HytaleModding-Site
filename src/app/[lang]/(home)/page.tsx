@@ -393,16 +393,6 @@ export default function HomePage() {
                     <BookIcon /> {messages.home.documentation}
                   </Link>
                 </Button>
-                <Button asChild>
-                  <Link
-                    href="https://forum.hytalemodding.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageSquareIcon /> {messages.home.forum}{" "}
-                    <ExternalLinkIcon />
-                  </Link>
-                </Button>
               </div>
               <div className="flex flex-wrap justify-center gap-4">
                 <DiscordButton />
