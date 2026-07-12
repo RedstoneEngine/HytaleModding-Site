@@ -142,7 +142,7 @@ export async function generateMetadata({
   if (!blog) notFound();
 
   const title = `${blog.frontmatter.title} | HytaleModding`;
-  const description = blog.frontmatter.description ?? blog.content.slice(0, 160).replace(/\n/g, " ") + "...";
+  const description = blog.frontmatter.description !== undefined ? blog.frontmatter.description : blog.content.slice(0, 160).replace(/\n/g, " ") + "...";
   const url = `/news/${year}/${month}/${slug}`;
   const image = blog.frontmatter.image;
 
