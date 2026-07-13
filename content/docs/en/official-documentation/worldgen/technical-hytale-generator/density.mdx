@@ -838,6 +838,7 @@ Reduces the performance cost of its child Density by interpolating between sprea
 
 Instead of generating the child's Density value for every single coordinate, it generates the child's value in intervals determined by the SampleDistance and SampleOffset and interpolates the value between the samples.
 
+{/* prettier-ignore */}
 <Callout>
 Tips:
 
@@ -847,7 +848,7 @@ Tips:
   - 2D noise in the downstream will not be significantly sped up if at all.
 - Use the SampleOffset to reduce undesired effects such as alignment of the interpolation artifacts with fluid levels.
 - You can use this in combination with a Mix to transition to the full non-sampled version of the child node in areas where precision is important (close to a POI, at the terrain's surface, etc.).
-  </Callout>
+</Callout>
 
 Below you can see the performance difference between different SampleDistance values for the terrain configuration in the screenshot below:
 
